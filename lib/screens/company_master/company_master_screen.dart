@@ -11,6 +11,22 @@ class CompanyMasterScreen extends StatefulWidget {
 }
 
 class _CompanyMasterScreenState extends State<CompanyMasterScreen> {
+  List memuList = [
+    {
+      'mainmenu': "Company",
+      'submenu': [
+        {'name': "Year Create"},
+        {'name': "Balance Transfer"},
+        {'name': "Account Group"},
+        {'name': "User Create"},
+        {'name': "User Rights"},
+        {'name': "Settings"},
+        {'name': "Books"},
+        {'name': "Data refresh"},
+        {'name': "Data Backup"},
+      ],
+    }
+  ];
   @override
   void initState() {
     super.initState();
@@ -25,9 +41,10 @@ class _CompanyMasterScreenState extends State<CompanyMasterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 1.w, vertical: 2.h),
+            padding: EdgeInsets.symmetric(horizontal: 1.w, vertical: 1.h),
             color: appColors.blueColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -57,7 +74,7 @@ class _CompanyMasterScreenState extends State<CompanyMasterScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 1.w),
+            padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 1.w),
             color: appColors.whiteColor,
             child: Row(
               children: [
@@ -108,9 +125,9 @@ class _CompanyMasterScreenState extends State<CompanyMasterScreen> {
                   ),
                 ),
                 Flexible(
-                  flex: 1, // Adjust flex as per your layout
+                  flex: 1,
                   child: SizedBox(
-                    width: 150, // Add a width constraint
+                    width: 150,
                     child: customText(
                       textAlign: TextAlign.start,
                       text: "GST Report",
@@ -135,23 +152,301 @@ class _CompanyMasterScreenState extends State<CompanyMasterScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 1.w, vertical: 2.h),
+            padding: EdgeInsets.symmetric(horizontal: 1.w, vertical: 1.h),
             color: appColors.blueColor,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: customText(
-                    textAlign: TextAlign.start,
-                    text: "08-04-2024 Monday",
-                    style: TextStyle(
-                        color: appColors.whiteColor,
-                        overflow: TextOverflow.ellipsis),
+                Flexible(
+                  flex: 2,
+                  child: SizedBox(
+                    width: 200,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "08-04-2024 Monday",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "ACC",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "ADD",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "OPP",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "ORD",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "SAL",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "PRC",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "CUT",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "OLD",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "KIS",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "KRC",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "REC",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "PAY",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "BRC",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "BPY",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "MEM",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "RAT",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "PRN",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "BKP",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 100,
+                    child: customText(
+                      textAlign: TextAlign.start,
+                      text: "REM",
+                      style: TextStyle(
+                          color: appColors.whiteColor,
+                          overflow: TextOverflow.ellipsis),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: appColors.skyBlueColor,
+                border: Border.all(color: appColors.blueColor),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7),
+                      color: appColors.blueColor,
+                    ),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 4.w, vertical: 10),
+                    child: customText(
+                        text: "Company",
+                        style: TextStyle(
+                            color: appColors.whiteColor, fontSize: 20)),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
