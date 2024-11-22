@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:prachi_desktop_app/screens/Authentication/login_screen.dart';
+import 'package:prachi_desktop_app/screens/company_master/company_master_screen.dart';
 import 'package:prachi_desktop_app/screens/home_screen.dart';
 import 'package:prachi_desktop_app/utils/colors.dart';
 import 'package:sizer/sizer.dart';
@@ -20,6 +21,7 @@ void main() async {
           messagingSenderId: '70370501120',
           projectId: projectId));
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    print("===============");
     await DesktopWindow.setMinWindowSize(Size(800, 600)); // Minimum size
     await DesktopWindow.setMaxWindowSize(Size(1920, 1080)); // Maximum size
   }
@@ -40,13 +42,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (p0, p1, p2) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           fontFamily: "Poppins",
           colorScheme: ColorScheme.fromSeed(seedColor: appColors.blueColor),
           useMaterial3: true,
         ),
-        home: user != null ? HomeScreen() : const LoginScreen(),
+        home: user != null ? CompanyMasterScreen() : const LoginScreen(),
       ),
     );
   }
