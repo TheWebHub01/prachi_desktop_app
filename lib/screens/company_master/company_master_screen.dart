@@ -5,6 +5,7 @@ import 'package:prachi_desktop_app/screens/Master_Table/Master/group_master_scre
 import 'package:prachi_desktop_app/screens/Master_Table/Master/item_master_screen.dart';
 import 'package:prachi_desktop_app/screens/Master_Table/Master/party_master_screen.dart';
 import 'package:prachi_desktop_app/screens/Master_Table/Master/product_master_screen.dart';
+import 'package:prachi_desktop_app/screens/Master_Table/Transection/other_purchase_screen.dart';
 import 'package:prachi_desktop_app/utils/colors.dart';
 import 'package:sizer/sizer.dart';
 
@@ -711,7 +712,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ? const GroupMasterScren()
                                             : selectedName == 'Item'
                                                 ? const ItemMasterScreen()
-                                                : Container()
+                                                : selectedName ==
+                                                        'Other Purchase'
+                                                    ? const OtherPurchaseScreen()
+                                                    : Container()
                           ],
                         ),
                       ),
