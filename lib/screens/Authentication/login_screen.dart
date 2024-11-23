@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:prachi_desktop_app/constants/progress_loader/progress_loader.dart';
+import 'package:prachi_desktop_app/screens/company_master/company_master_screen.dart';
+import 'package:prachi_desktop_app/screens/home_screen.dart';
 import 'package:sizer/sizer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,9 +19,71 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _passwordController = TextEditingController();
   bool checkBoxValue = false;
   final _formKey = GlobalKey<FormState>();
+  Future<void> loginUser(
+      String email, String password, BuildContext context) async {
+    // Trim inputs
+    email = email.trim();
+    password = password.trim();
+
+    if (_formKey.currentState == null || !_formKey.currentState!.validate()) {
+      return; // Exit if form is not valid
+    }
+
+    try {
+      // Sign in with Firebase Auth
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      // Store email in SharedPreferences
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setString('email', email);
+
+      // Navigate to the next screen
+      if (context.mounted) {
+        await Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      }
+
+      // Show success message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Welcome back, $email!'),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    } on FirebaseAuthException catch (e) {
+      // Handle specific FirebaseAuth errors
+      print("=========>$e");
+      String errorMessage = 'An error occurred. Please try again.';
+      if (e.code == 'user-not-found') {
+        errorMessage = 'No user found for that email.';
+      } else if (e.code == 'wrong-password') {
+        errorMessage = 'Incorrect password.';
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(errorMessage),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    } catch (e) {
+      // Handle unexpected errors
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('An unexpected error occurred: $e'),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    ProgressLoader pl = ProgressLoader(context, isDismissible: true);
+
     return LayoutBuilder(
       builder: (context, constraints) {
         // Use constraints for adaptive layout
@@ -110,7 +177,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: GestureDetector(
                                       onTap: () async {
                                         if (_formKey.currentState!.validate()) {
-                                          // Perform login
+                                          await pl.show();
+                                          await loginUser(
+                                              _emailController.text,
+                                              _passwordController.text,
+                                              context);
+                                          await pl.hide();
                                         }
                                       },
                                       child: Container(

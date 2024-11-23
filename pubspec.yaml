@@ -50,7 +50,10 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_svg: ^2.0.15
   sizer: ^3.0.4
-  desktop_window: ^0.4.2
+  desktop_window: 
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+  shared_preferences: ^2.3.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -64,9 +67,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - assets/png/
-  #   - assets/svg/
+  assets:
+    - assets/png/
+    - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

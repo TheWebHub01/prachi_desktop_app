@@ -8,6 +8,7 @@ class AppColors {
   Color greyColor = const Color(0xFF79747E);
   Color lightGreyColor = const Color(0xFFC1C1C1);
   Color textGreyColor = const Color(0xFF797979);
+  Color lightskyColor = const Color(0xFFD3E5FE);
 
   LinearGradient myLinearGradient = LinearGradient(
     colors: [
