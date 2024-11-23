@@ -46,3 +46,37 @@ TextFormField customTextformfield(
         )),
   );
 }
+
+SizedBox customTextfield(TextEditingController? controller, String labelText) {
+  return SizedBox(
+    height: 35,
+    child: TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+          contentPadding: const EdgeInsets.all(8), // Added this
+
+          labelText: labelText,
+          labelStyle: TextStyle(color: appColors.textGreyColor),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: appColors.blueColor),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: appColors.blueColor),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          disabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: appColors.blueColor),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: appColors.blueColor),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: appColors.blueColor),
+            borderRadius: BorderRadius.circular(5),
+          )),
+    ),
+  );
+}

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:prachi_desktop_app/screens/Authentication/login_screen.dart';
 import 'package:prachi_desktop_app/screens/company_master/company_master_screen.dart';
+
 import 'package:prachi_desktop_app/screens/home_screen.dart';
 import 'package:prachi_desktop_app/utils/colors.dart';
 import 'package:sizer/sizer.dart';
@@ -49,7 +50,7 @@ class _MyAppState extends State<MyApp> {
           colorScheme: ColorScheme.fromSeed(seedColor: appColors.blueColor),
           useMaterial3: true,
         ),
-        home: user != null ? CompanyMasterScreen() : const LoginScreen(),
+        home: user != null ? HomeScreen() : const LoginScreen(),
       ),
     );
   }

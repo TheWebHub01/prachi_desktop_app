@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prachi_desktop_app/constants/progress_loader/progress_loader.dart';
+import 'package:prachi_desktop_app/screens/company_master/company_master_screen.dart';
 import 'package:prachi_desktop_app/screens/home_screen.dart';
 import 'package:sizer/sizer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
