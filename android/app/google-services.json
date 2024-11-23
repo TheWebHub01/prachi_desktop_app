@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "70370501120",
+    "project_id": "prachi-dektop-app",
+    "storage_bucket": "prachi-dektop-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70370501120:android:2d409e74086858355a6ee5",
+        "android_client_info": {
+          "package_name": "com.prachi_desktop_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3Cx-aKT55kV6hBYLDzodpjMYCE1XTB2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

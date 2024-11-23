@@ -1,4 +1,4 @@
-package com.example.prachi_desktop_app
+package com.prachi_desktop_app
 
 import io.flutter.embedding.android.FlutterActivity
 
